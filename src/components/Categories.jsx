@@ -8,8 +8,10 @@ const Categories = ({ categories }) => {
           key={category.category}
           to={`/category/${category.category}`}
           role="tab"
-          className="tab"
-        >{category.category}</NavLink>
+          className={({ isActive }) => `tab ${isActive ? "tab-active" : ""}`}
+        >
+          {category.category}
+        </NavLink>
       ))}
     </div>
   );

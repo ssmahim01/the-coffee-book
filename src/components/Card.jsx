@@ -1,5 +1,5 @@
 const Card = ({coffee}) => {
-    const {id, name, image, category, rating, popularity, origin, type} = coffee;
+    const {id, name, image, category, rating, popularity, origin, type} = coffee || {};
 
     return (
         <div>
