@@ -6,12 +6,12 @@ const Coffees = () => {
     const data = useLoaderData();
     const [coffees, setCoffees] = useState(data);
 
-    const handleSortList = (sortType) => {
+    const handleSortList = sortType => {
         if(sortType === 'rating'){
-            const sortedRatingList = [...coffees].sort((a, b) => b.rating - a.rating);
+            const sortedRatingList = [...data].sort((a, b) => b.rating - a.rating);
             setCoffees(sortedRatingList);
         }else if(sortType === 'popularity'){
-            const sortedPopularityList = [...coffees].sort((a, b) => b.popularity - a.popularity)
+            const sortedPopularityList = [...data].sort((a, b) => b.popularity - a.popularity)
             setCoffees(sortedPopularityList);
         }
     }
@@ -29,7 +29,7 @@ const Coffees = () => {
     </div>
 
     <div className="my-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {data.map((coffee) => (
+      {coffees.map((coffee) => (
         <Card key={coffee.id} coffee={coffee}></Card>
       ))}
     </div>
